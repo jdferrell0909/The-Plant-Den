@@ -4,6 +4,7 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from '../components/Meta';
 import FormContainer from "../components/FormContainer";
 import { register } from "../actions/userActions";
 
@@ -37,6 +38,8 @@ const RegisterScreen = ({ location, history }) => {
   };
 
   return (
+    <>
+    <Meta title='Proshop | Register' />
     <FormContainer>
       <h1>Sign Up</h1>
       {message && <Message variant="danger">{message}</Message>}
@@ -97,6 +100,7 @@ const RegisterScreen = ({ location, history }) => {
         </Col>
       </Row>
     </FormContainer>
+    </>
   );
 };
 

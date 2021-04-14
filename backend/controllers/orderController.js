@@ -44,7 +44,7 @@ const getOrderById = asyncHandler(async (req, res) => {
     "user",
     "name email"
   );
-  
+
   if (order) {
     res.json(order);
   } else {
@@ -58,7 +58,7 @@ const getOrderById = asyncHandler(async (req, res) => {
 // @access Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
-  
+
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
@@ -66,7 +66,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
       id: req.body.id,
       status: req.body.status,
       update_time: req.body.update_time,
-      email_address: req.body.payer.email_address
+      email_address: req.body.payer.email_address,
     };
 
     const updatedOrder = await order.save();
@@ -83,7 +83,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 // @access Private/Admin
 const updateOrderToDelivered = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
-  
+
   if (order) {
     order.isDelivered = true;
     order.deliveredAt = Date.now();
@@ -109,9 +109,15 @@ const getMyOrders = asyncHandler(async (req, res) => {
 // @route  GET /api/orders
 // @access Private/Admin
 const getOrders = asyncHandler(async (req, res) => {
-  const orders = await Order.find({}).populate('user', 'id name');
+  const orders = await Order.find({}).populate("user", "id name");
   res.json(orders);
 });
 
-
-export { addOrderItems, getOrderById, updateOrderToPaid, updateOrderToDelivered, getMyOrders, getOrders };
+export {
+  addOrderItems,
+  getOrderById,
+  updateOrderToPaid,
+  updateOrderToDelivered,
+  getMyOrders,
+  getOrders,
+};

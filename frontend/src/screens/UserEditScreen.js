@@ -46,7 +46,7 @@ const UserEditScreen = ({ match, history }) => {
 
   return (
     <>
-    <Meta title='Proshop | Edit User' />
+    <Meta title='The Plant Den | Edit User' />
       <Link to="/admin/userlist" className="btn btn-light my-3">
         Go Back
       </Link>

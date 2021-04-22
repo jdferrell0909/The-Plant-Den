@@ -27,7 +27,7 @@ const ShippingScreen = ({ history }) => {
 
   return (
     <>
-    <Meta title='Proshop | Shipping' />
+    <Meta title='The Plant Den | Shipping' />
     <FormContainer>
       <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>

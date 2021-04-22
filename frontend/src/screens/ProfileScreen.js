@@ -56,7 +56,7 @@ const ProfileScreen = ({ location, history }) => {
 
   return (
     <>
-      <Meta title={`Proshop | ${user.name}`} />
+      <Meta title={`The Plant Den | ${user.name}`} />
       <Row>
         <Col md={3}>
           <h2>User Profile</h2>

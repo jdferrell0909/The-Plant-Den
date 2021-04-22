@@ -26,7 +26,7 @@ const PaymentScreen = ({ history }) => {
 
   return (
     <>
-    <Meta title='Propshop | Payment' />
+    <Meta title='The Plant Den | Payment' />
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
       <h1>Payment Method</h1>

@@ -54,7 +54,7 @@ const PlaceOrderScreen = ({ history }) => {
 
   return (
     <>
-    <Meta title='Propshop | Place Order' />
+    <Meta title='The Plant Den | Place Order' />
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

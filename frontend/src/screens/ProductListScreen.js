@@ -47,7 +47,7 @@ const ProductListScreen = ({ history, match }) => {
     }
 
     if (successCreate) {
-      history.push(`/admin/product/${createdProduct._id}/edit`);
+      history.push(`/admin/product/${createdProduct._id}/edit`, "create");
     } else {
       dispatch(listProducts("", pageNumber));
     }
@@ -73,7 +73,7 @@ const ProductListScreen = ({ history, match }) => {
 
   return (
     <>
-    <Meta title='Admin | Product List' />
+      <Meta title="Admin | Product List" />
       <Row className="align-items-center">
         <Col>
           <h1>Products</h1>

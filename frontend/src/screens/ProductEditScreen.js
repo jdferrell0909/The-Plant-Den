@@ -12,6 +12,7 @@ import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
+  const isNewProduct = history.location.state === "create";
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -94,12 +95,12 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <>
-    <Meta title='Admin | Edit Product' /> 
+      <Meta title={`Admin | ${isNewProduct ? "Create" : "Edit"} Product`} />
       <Link to="/admin/productlist" className="btn btn-light my-3">
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1>{isNewProduct ? "Create" : "Edit"} Product</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
@@ -187,7 +188,7 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Button type="submit" variant="primary">
-              Update
+              {isNewProduct ? "Create" : "Update"}
             </Button>
           </Form>
         )}
